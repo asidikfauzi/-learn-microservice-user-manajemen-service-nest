@@ -26,6 +26,7 @@
     "@nestjs/core": "^9.0.0",
     "@nestjs/microservices": "^9.3.9",
     "@nestjs/platform-express": "^9.0.0",
+    "@nestjs/swagger": "^6.2.1",
     "@prisma/client": "^4.11.0",
     "amqp-connection-manager": "^4.1.11",
     "amqplib": "^0.10.3",
