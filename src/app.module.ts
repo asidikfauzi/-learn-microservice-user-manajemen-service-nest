@@ -4,6 +4,7 @@ import { APP_GUARD } from '@nestjs/core';
 import { ClientsModule, Transport } from '@nestjs/microservices';
 import { AppController } from './app.controller';
 import { AppService } from './app.service';
+import { JwtAuthGuard } from './guards';
 import { PrismaService } from './services'
 
 @Module({
@@ -45,11 +46,11 @@ import { PrismaService } from './services'
   controllers: [AppController],
   providers: [
     AppService,
-    // PrismaService,
-    // {
-    //   provide: APP_GUARD,
-    //   useClass:
-    // }
+    PrismaService,
+    {
+      provide: APP_GUARD,
+      useClass: JwtAuthGuard
+    }
   ],
 })
 export class AppModule {}
